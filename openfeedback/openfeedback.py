@@ -5,7 +5,7 @@ from xblock.fields import Scope, String, Boolean, List
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 from web_fragments.fragment import Fragment
 from xblockutils.resources import ResourceLoader
-import time
+from datetime import datetime
 
 loader = ResourceLoader(__name__)
 
@@ -68,9 +68,10 @@ class OpenFeedbackXBlock(XBlock, ScorableXBlockMixin, StudioEditableXBlockMixin)
         :return:
         """
         if not self.student_submitted and "student_feedback" in data and data["student_feedback"]:
+            now = datetime.now()
             self.students_feedback.append({
                 'feedback': data["student_feedback"],
-                'timestamp': int(time.time())
+                'timestamp': now.strftime("%d/%m/%Y %H:%M:%S")
             })
             self.student_submitted = True
             return {

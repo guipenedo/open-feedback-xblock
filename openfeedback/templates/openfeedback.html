@@ -1,11 +1,11 @@
 {% if is_course_staff %}
-    <label class="of-prompt">{{ prompt }}</label>
+    <h2>{{ prompt }}</h2>
     <h3>Submissões</h3>
     <div class="of-submissions_outer_container">
         <div class="of-submissions_inner_container">
             {% for submission in submissions %}
                 <div class="of-submissions_response">
-                    <strong>[{{ submission.timestamp|date:"SHORT_DATE_FORMAT" }} {{ submission.timestamp|time:"H:i" }}] </strong>
+                    <strong>[{{ submission.timestamp }}] </strong>
                     {{ submission.feedback }}
                 </div>
             {% empty %}
