@@ -18,14 +18,14 @@
         <div id="of-input-group_{{ xblock_id }}">
             <label class="of-prompt" for="student_feedback_{{ xblock_id }}">{{ prompt }}</label>
             <textarea class="of-input" id="student_feedback_{{ xblock_id }}"></textarea>
-        </div>
 
-        <div class="action">
-            <button class="submit btn-button" data-should-enable-submit-button="True" data-submitting="A submeter"
-                    data-value="Submeter" id="submit_{{ xblock_id }}"
-                    type="button">
-                <span class="submit-label">Submeter</span>
-            </button>
+            <div class="action">
+                <button class="submit btn-button" data-should-enable-submit-button="True" data-submitting="A submeter"
+                        data-value="Submeter" id="submit_{{ xblock_id }}"
+                        type="button">
+                    <span class="submit-label">Submeter</span>
+                </button>
+            </div>
         </div>
     {% endif %}
 {% endif %}
