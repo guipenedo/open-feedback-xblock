@@ -5,7 +5,7 @@
         <div class="of-submissions_inner_container">
             {% for submission in submissions %}
                 <div class="of-submissions_response">
-                    <strong>[{{ submission.timestamp|date:"SHORT_DATE_FORMAT" }}] </strong>
+                    <strong>[{{ submission.timestamp|date:"SHORT_DATE_FORMAT" }} {{ submission.timestamp|time:"H:i" }}] </strong>
                     {{ submission.feedback }}
                 </div>
             {% endfor %}

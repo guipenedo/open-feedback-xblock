@@ -70,7 +70,7 @@ class OpenFeedbackXBlock(XBlock, ScorableXBlockMixin, StudioEditableXBlockMixin)
         if not self.student_submitted and "student_feedback" in data and data["student_feedback"]:
             self.students_feedback.append({
                 'feedback': data["student_feedback"],
-                'timestamp': time.time()
+                'timestamp': int(time.time())
             })
             self.student_submitted = True
             return {
