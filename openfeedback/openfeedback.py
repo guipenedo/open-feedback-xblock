@@ -67,13 +67,18 @@ class OpenFeedbackXBlock(XBlock, ScorableXBlockMixin, StudioEditableXBlockMixin)
         :param _suffix:
         :return:
         """
-        self.students_feedback.append({
-            'feedback': data["student_feedback"],
-            'timestamp': time.time()
-        })
-        self.student_submitted = True
+        if not self.student_submitted and "student_feedback" in data and data["student_feedback"]:
+            self.students_feedback.append({
+                'feedback': data["student_feedback"],
+                'timestamp': time.time()
+            })
+            self.student_submitted = True
+            return {
+                'result': 'success'
+            }
         return {
-            'result': 'success'
+            'result': 'error',
+            'message': 'Apenas uma submissão por aluno.'
         }
 
     def _get_xblock_loc(self):
