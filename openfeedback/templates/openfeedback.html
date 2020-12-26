@@ -1,15 +1,16 @@
 {% if is_course_staff %}
-<h3>Submissões</h3>
-<div class="of-submissions_outer_container">
-    <div class="of-submissions_inner_container">
-        {% for submission in submissions %}
-            <div class="of-submissions_response">
-                <strong>[{{ submission.timestamp|date:"SHORT_DATE_FORMAT" }}] </strong>
-                {{ submission.feedback }}
-            </div>
-        {% endfor %}
+    <label class="of-prompt">{{ prompt }}</label>
+    <h3>Submissões</h3>
+    <div class="of-submissions_outer_container">
+        <div class="of-submissions_inner_container">
+            {% for submission in submissions %}
+                <div class="of-submissions_response">
+                    <strong>[{{ submission.timestamp|date:"SHORT_DATE_FORMAT" }}] </strong>
+                    {{ submission.feedback }}
+                </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
 {% else %}
     {% if student_submitted %}
         <p>Obrigado pelo feedback.</p>
@@ -20,11 +21,10 @@
         </div>
 
         <div class="action">
-            <button class="submit btn-default" data-should-enable-submit-button="True" data-submitting="A submeter"
+            <button class="submit btn-button" data-should-enable-submit-button="True" data-submitting="A submeter"
                     data-value="Submeter" id="submit_{{ xblock_id }}"
                     type="button">
                 <span class="submit-label">Submeter</span>
-                <span aria-hidden="true" class="icon fa fa-caret-right"></span>
             </button>
         </div>
     {% endif %}

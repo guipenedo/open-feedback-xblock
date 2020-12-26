@@ -18,7 +18,7 @@ def resource_string(path):
 
 class OpenFeedbackXBlock(XBlock, ScorableXBlockMixin, StudioEditableXBlockMixin):
     display_name = String(display_name="display_name",
-                          default="Editor de Python",
+                          default="Feedback aberto",
                           scope=Scope.settings,
                           help="Nome do componente na plataforma")
 
