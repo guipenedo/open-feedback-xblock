@@ -28,7 +28,7 @@ class OpenFeedbackXBlock(XBlock, ScorableXBlockMixin, StudioEditableXBlockMixin)
                     help="Texto que aparece associado a esta caixa de texto de open feedback.")
 
     students_feedback = List(display_name="students_feedback",
-                             scope=Scope.settings)
+                             scope=Scope.user_state_summary)
 
     student_submitted = Boolean(display_name="student_submitted",
                                 default=False,
