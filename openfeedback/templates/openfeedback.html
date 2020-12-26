@@ -8,6 +8,8 @@
                     <strong>[{{ submission.timestamp|date:"SHORT_DATE_FORMAT" }} {{ submission.timestamp|time:"H:i" }}] </strong>
                     {{ submission.feedback }}
                 </div>
+            {% empty %}
+                <p>Ainda não há submissões.</p>
             {% endfor %}
         </div>
     </div>
