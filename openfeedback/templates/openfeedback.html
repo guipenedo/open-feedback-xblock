@@ -1,6 +1,5 @@
 {% if is_course_staff %}
     <h2>{{ prompt }}</h2>
-    <h3>Submissões</h3>
     <div class="of-submissions_outer_container">
         <div class="of-submissions_inner_container">
             {% for submission in submissions %}
@@ -9,7 +8,7 @@
                     {{ submission.feedback }}
                 </div>
             {% empty %}
-                <p>Ainda não há submissões.</p>
+                <p>Ainda não há respostas.</p>
             {% endfor %}
         </div>
     </div>
